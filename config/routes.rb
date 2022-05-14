@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get '/logged_in', to: 'sessions#is_logged_in'
 
       resources :users, only: [:create, :update]
+      resources :documents, except: [:show, :new, :edit]
     end
   end
 

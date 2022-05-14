@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :password, length: (8..32), confirmation: true, if: :setting_password?
 
+  has_many :documents
+
   private 
 
   def setting_password?
