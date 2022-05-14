@@ -5,7 +5,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user = User.new(user_params)
     if @user.save
       login!
-      render partial: 'show.json.jbuilder', locals: { user: @user }
+      render partial: 'show', formats: :json, locals: { user: @user }
     else
       render json: { errors: @user.errors }, status: 400
     end
