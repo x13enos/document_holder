@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :password, length: (8..32), confirmation: true, if: :setting_password?
 
   has_many :documents
+  has_many :boxes
 
   private 
 

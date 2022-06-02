@@ -1,0 +1,1 @@
+json.(box, :id, :name, :color)

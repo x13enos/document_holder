@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
       resources :users, only: [:create, :update]
       resources :documents, except: [:show, :new, :edit]
+      resources :boxes, only: [:index, :create, :update, :destroy]
     end
   end
 
