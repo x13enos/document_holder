@@ -25,7 +25,7 @@ class Api::V1::BoxesController < Api::V1::BaseController
 
   def destroy
     @box = current_user.boxes.find(params[:id])
-    if @box.delete
+    if @box.destroy
       render json: { status: :ok }, formats: :json
     else
       render json: { errors: @box.errors }, status: 400

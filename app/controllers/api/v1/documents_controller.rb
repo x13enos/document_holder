@@ -17,6 +17,6 @@ class Api::V1::DocumentsController < Api::V1::BaseController
   private
 
   def document_params
-    params.permit(:name, images: [])
+    params.permit(:name, :box_id, images: [])
   end
 end
