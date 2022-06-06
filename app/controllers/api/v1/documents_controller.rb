@@ -14,6 +14,15 @@ class Api::V1::DocumentsController < Api::V1::BaseController
     end
   end
 
+  def destroy
+    document = current_user.documents.find(params[:id])
+    if document.destroy
+      render json: { status: :ok }, formats: :json
+    else
+      render json: { errors: document.errors }, status: 400
+    end
+  end
+
   private
 
   def document_params
