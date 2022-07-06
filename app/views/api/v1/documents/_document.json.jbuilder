@@ -6,6 +6,7 @@ json.box do
   json.color document.box&.color
 end
 json.images document.images do |image|
+  json.id image.id
   json.url image.url
   json.name image.filename.to_s
 end
