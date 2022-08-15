@@ -1,5 +1,9 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_action :authorize_user
+  skip_before_action :authorize_user, only: [:create]
+
+  def current_user_info
+    render partial: 'show', formats: :json, locals: { user: current_user }
+  end
 
   def create
     @user = User.new(user_params)
