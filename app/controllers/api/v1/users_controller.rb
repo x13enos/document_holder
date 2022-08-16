@@ -15,6 +15,15 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
   end
 
+  def update_profile
+    @user = current_user
+    if @user.update(user_params)
+      render partial: 'show', formats: :json, locals: { user: @user }
+    else
+      render json: { errors: @user.errors }, status: 400
+    end
+  end
+
   private 
 
   def user_params

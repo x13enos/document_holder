@@ -20,6 +20,11 @@ class Api::V1::SessionsController < Api::V1::BaseController
     end
   end
 
+  def destroy
+    reset_session
+    render json: { status: :ok }, formats: :json
+  end
+
   private
 
   def user_params
