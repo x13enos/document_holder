@@ -10,3 +10,7 @@ json.images document.images do |image|
   json.url image.url
   json.name image.filename.to_s
 end
+json.tags document.tags do |tag|
+  json.id tag.id
+  json.name tag.name
+end

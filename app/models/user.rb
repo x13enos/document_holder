@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :documents
   has_many :boxes
+  has_many :tags
 
   private 
 
